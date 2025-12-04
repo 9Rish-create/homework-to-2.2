@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework-2.1</title>
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <div class="parent">
+            <ul id="list">
+                <li><a href="#about" class="active link">item 1</a></li>
+                <li><a href="" class="link">item 2</a></li>
+                <li><a href="" class="link">item 3</a></li>
+                <li><a href="" class="link">item 4</a></li>
+                <li><a href="" class="link">item 5</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- document.querySelector('a').getAttribute('href') -->
+    <!-- document.querySelector('a').attributes -->
+    <!-- document.querySelector('a').setAttribute('href', '/about') -->
+    <!-- document.querySelector('a').removeAttribute( 'href') -->
+    <!-- document.querySelector('a').classList
+    document.querySelector('a').className
+    document.querySelector('li a')
+    document.querySelectorAll('li a')
+    document.querySelectorAll('li a')[0]
+    document.querySelectorAll('li a')[1]
+    document.querySelectorAll('li a')[1].classList.contains('active') 
+    document.querySelectorAll('li a')[0].classList.remove('link')
+    document.querySelectorAll('li a')[0].classList.add('link')
+    document.querySelectorAll('li a')[0].classList.toggle('active')
+
+    const divElem = document.createElement('div')
+    divElem.classList.add('link')
+    divElem.classList.remove('value-data')
+    divElem.setAttribute('value', 5)
+    divElem.textContent = 'test'
+
+
+    -->
+    <script>
+        const listEl = document.querySelector('#list');
+
+        addLiEl(listEl, 'start', 'Item 0', '/item0');
+        addLiEl(listEl, 'end', 'Item 6', '/item6');
+
+
+        function addLiEl(listElement, position, text, link) {
+
+            const liEl = document.createElement('li');
+
+            const aEl = document.createElement('a');
+            aEl.setAttribute('href', link);
+            aEl.textContent = text;
+
+
+            liEl.append(aEl);
+
+            // if(position==='start') {
+            //     listElement.prepend(liEl);
+            // } else {
+            //     listElement.append(liEl);
+            // }
+        
+            switch(position) {
+                case 'start':
+                    listElement.prepend(liEl);
+                    break;
+                case 'end':
+                    listElement.append(liEl)
+            }
+        }
+
+
+
+          // const liEl = document.createElement('li');
+
+        // const aEl = document.createElement('a');
+        // aEl.setAttribute('href', '/item0');
+        // aEl.textContent = 'Item 0';
+
+        // liEl.append(aEl);
+
+        // listEl.prepend(liEl);
+
+
+        // const liEl2 = document.createElement('li');
+
+        // const aEl2 = document.createElement('a');
+        // aEl2.setAttribute('href', '/item6');
+        // aEl2.textContent = 'Item 6';
+
+        // liEl2.append(aEl2);
+
+        // listEl.append(liEl2);
+
+    </script>
+</body>
+</html>
